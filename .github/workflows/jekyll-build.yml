@@ -1,0 +1,29 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Stellt sicher, dass der Workflow nur bei Push auf den 'main' Branch läuft
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Wähle hier eine Ruby-Version, die kompatibel ist. '3.2' oder '3.3' sind gängig.
+          bundler-cache: true # Installiert die Gems aus Gemfile.lock
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # Ein beliebtes Action für GitHub Pages Deployment
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site # Der Ordner, den Jekyll beim Build erstellt
+          cname: theemunator.github.io # Optional: Setzt den CNAME (deine Domain). Wenn du später eine Custom Domain nutzt (emunator.de), musst du diesen Wert anpassen

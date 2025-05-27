@@ -66,18 +66,18 @@ hero:
 # Logos
 logos:
   enable: true
-  logos_title: Nerd Stuff
+  logos_title: Stuff I like
   logo_image:
-    - alt: "Game Boy"
-      image: "/images/1000.jpg"
-    - alt: "Super Nintendo"
-      image: "/images/1001.jpg"
-    - alt: "Keyboard"
-      image: "/images/1002.jpg"
-    - alt: "Headphones"
-      image: "/images/1003.jpg"
-    - alt: "Mouse"
-      image: "/images/1004.jpg"
+    - alt: "Android"
+      image: "/images/Android_AI_Generated.jpg"
+    - alt: "Emu"
+      image: "/images/Emu_AI_Generated.jpg"
+    - alt: "Obsidian"
+      image: "/images/Obsidian.jpg"
+    - alt: "Foldable"
+      image: "/images/SamsungFlip_AI_Generated.jpg"
+    - alt: "HomeAssistant"
+      image: "/images/HomeAssistant_AI_Generated.jpg"
 
 
 #-------------------------------

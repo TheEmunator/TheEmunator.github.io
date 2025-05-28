@@ -34,7 +34,7 @@ This blog is automatically deployed to GitHub Pages using GitHub Actions.
 
 The **Coderon** theme is a premium theme, and its usage is subject to the terms of the license under which it was purchased. Unauthorized redistribution or use of the theme's source code is not permitted. Please refer to the theme's original licensing documentation for specific details.
 
-All new blog content and custom code written by [TheEmunator](https://github.com/the-emunator) (if any, beyond the theme) is protected under copyright.
+All new blog content and custom code written by [the-emunator](https://github.com/the-emunator) (if any, beyond the theme) is protected under copyright.
 
 ## Support
 

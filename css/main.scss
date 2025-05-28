@@ -132,66 +132,101 @@
 
 
 
-/* Google Translate Widget Positioning */
-/* This section targets the dropdown menu, not the automatic banner. */
+/* Google Translate Widget Styling Adjustments for Dark Theme */
+/* Container of the dropdown */
 #google_translate_element {
-    position: fixed; /* Fixes it within the browser window */
-    bottom: 20px;    /* 20px from the bottom edge */
-    left: 20px;      /* 20px from the left edge */
-    z-index: 9999;   /* Ensures it stays on top of other elements */
-    
-    /* Color adjustments for the container of the dropdown */
-    background-color: #2a2a2a; /* Darker background, similar to your theme */
-    border: 1px solid #444; /* Darker border */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    background-color: #2a2a2a; /* Dunklerer Hintergrund, passend zum Theme */
+    border: 1px solid #444; /* Dunklerer Rand */
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Slightly darker shadow */
-    padding: 5px; /* Ensure padding is still there */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    padding: 5px;
 }
 
-/* Styling for the actual select field inside the widget */
+/* The actual select field inside the dropdown */
 #google_translate_element .goog-te-combo {
-    background-color: #333; /* Darker background for the select box */
-    color: #eee; /* Lighter text color for contrast */
-    border: 1px solid #555; /* Darker border for the select box */
-    border-radius: 3px;
-    font-size: 14px;
-    padding: 5px; /* Add some padding to the select box itself */
+    background-color: #333 !important; /* Sehr dunkler Hintergrund für das Dropdown-Feld selbst */
+    color: #eee !important; /* Helle Textfarbe für die Auswahl */
+    border: 1px solid #555 !important; /* Dunklerer Rand */
+    border-radius: 3px !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    box-shadow: none !important; /* Entferne eventuelle Schatten */
 }
 
-
-/* Styling for the Google branding text inside the widget */
-/* This is often difficult to target directly, but we can try for its container */
+/* The Google "G" logo and "Sprache auswählen" text */
+/* This targets the container holding the text and logo */
 #google_translate_element .goog-te-gadget-simple {
-    background-color: transparent !important; /* Try to make background transparent */
-    border: none !important; /* Remove borders */
-    padding: 0 !important; /* Remove padding */
-    margin: 0 !important; /* Remove margin */
+    background-color: transparent !important; /* Hintergrund transparent machen */
+    border: none !important; /* Rand entfernen */
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex; /* Flexbox für bessere Ausrichtung von Logo und Text */
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: center; /* Horizontal zentrieren */
 }
 
+/* The Google logo image */
 #google_translate_element .goog-te-gadget-simple img {
-    /* Hide the Google logo if desired, or make it less prominent */
-    /* display: none; */
-    /* filter: grayscale(100%) brightness(150%); */ /* Make logo lighter/grayer */
+    /* Filters to adjust the Google logo color for dark mode */
+    filter: invert(1) grayscale(100%) brightness(150%) !important; /* Invertiert Farben (macht weiß schwarz, dann hell), graut es ein und hellt es auf */
+    margin-right: 5px !important; /* Etwas Abstand zum Text */
+    height: 18px !important; /* Optisch anpassen */
+    width: auto !important;
 }
 
+/* The "Sprache auswählen" text */
 #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span {
-    color: #eee !important; /* Lighter text color for the "Select Language" text */
-    font-weight: 500;
+    color: #eee !important; /* Helle Textfarbe */
+    font-weight: 500 !important;
+    text-decoration: none !important; /* Unterstreichung entfernen, falls vorhanden */
 }
 
+/* Hover state for the "Sprache auswählen" text */
 #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span:hover {
-    color: #007bff !important; /* Example hover color for text */
+    color: #007bff !important; /* Beispiel: Blauer Hover-Effekt */
 }
 
-/* Styling for the Google Translate banner (if autoDisplay: true) */
-/* As discussed, this is extremely limited due to iframe/Shadow DOM. */
-/* We're mostly trying to influence the iframe container itself. */
+/* The small arrow icon (down arrow) */
+#google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span:last-child {
+    color: #eee !important; /* Farbe des Pfeils anpassen */
+}
+
+/* Styling for the dropdown list that appears when you click "Sprache auswählen" */
+/* This part is even trickier, as it's often generated dynamically and can be harder to override. */
+/* You might need to inspect it in the browser's developer tools when it's open. */
+/* This often needs !important to override Google's inline styles. */
+.goog-menuitem { /* General item in the dropdown list */
+    background-color: #333 !important; /* Dark background for dropdown items */
+    color: #eee !important; /* Light text for dropdown items */
+}
+
+.goog-menuitem:hover { /* Hover state for dropdown items */
+    background-color: #555 !important; /* Slightly lighter dark background on hover */
+    color: #fff !important; /* White text on hover */
+}
+
+/* Separator lines in the dropdown (if any) */
+.goog-menuseparator {
+    background-color: #555 !important;
+}
+
+/* The active selected language in the dropdown list */
+.goog-menuitem-highlight {
+    background-color: #007bff !important; /* Example: Blue for selected item */
+    color: #fff !important;
+}
+
+/* The Google Translate banner frame itself (top of the page) */
 .goog-te-banner-frame.skiptranslate {
+    /* Keep this for potential top banner positioning */
     top: 0px !important;
     left: 0px !important;
     width: 100% !important;
     z-index: 2147483647 !important;
-    /* Attempt to darken the background of the banner frame, may not work */
+    /* You may attempt to change its background, but it's very difficult */
     /* background-color: #1a1a1a !important; */
-    /* filter: invert(1) hue-rotate(180deg); /* Daring attempt to invert colors, might look weird */
 }

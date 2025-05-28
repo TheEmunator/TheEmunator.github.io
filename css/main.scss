@@ -140,7 +140,7 @@
     left: 20px;      /* 20px from the left edge */
     z-index: 9999;   /* Ensures it stays on top of other elements */
     /* Optional: Adjust background color, padding, etc., for visibility */
-    background-color: #fff; /* Example: White background for contrast */
+    background-color: #202020; /* Example: White background for contrast */
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -150,7 +150,7 @@
 /* to customize the appearance of the dropdown itself. */
 /* Example: The actual select field inside the widget */
 #google_translate_element .goog-te-combo {
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     padding: 5px;
     border-radius: 3px;
     font-size: 14px;

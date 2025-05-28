@@ -133,100 +133,128 @@
 
 
 /* Google Translate Widget Styling Adjustments for Dark Theme */
+
 /* Container of the dropdown */
 #google_translate_element {
     position: fixed;
     bottom: 20px;
     left: 20px;
     z-index: 9999;
-    background-color: #2a2a2a; /* Dunklerer Hintergrund, passend zum Theme */
-    border: 1px solid #444; /* Dunklerer Rand */
+    background-color: #2a2a2a; /* Darker background, similar to your theme */
+    border: 1px solid #444; /* Darker border */
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Slightly darker shadow */
+    padding: 5px; /* Ensure padding is still there */
 }
 
 /* The actual select field inside the dropdown */
 #google_translate_element .goog-te-combo {
-    background-color: #333 !important; /* Sehr dunkler Hintergrund für das Dropdown-Feld selbst */
-    color: #eee !important; /* Helle Textfarbe für die Auswahl */
-    border: 1px solid #555 !important; /* Dunklerer Rand */
+    background-color: #333 !important; /* Very dark background for the select box itself */
+    color: #eee !important; /* Light text color for the selected option */
+    border: 1px solid #555 !important; /* Darker border */
     border-radius: 3px !important;
     font-size: 14px !important;
     padding: 5px !important;
-    box-shadow: none !important; /* Entferne eventuelle Schatten */
+    box-shadow: none !important; /* Remove potential shadows */
 }
 
-/* The Google "G" logo and "Sprache auswählen" text */
-/* This targets the container holding the text and logo */
+/* The Google "G" logo and "Sprache auswählen" text container */
 #google_translate_element .goog-te-gadget-simple {
-    background-color: transparent !important; /* Hintergrund transparent machen */
-    border: none !important; /* Rand entfernen */
+    background-color: transparent !important; /* Make background transparent */
+    border: none !important; /* Remove borders */
     padding: 0 !important;
     margin: 0 !important;
-    display: flex; /* Flexbox für bessere Ausrichtung von Logo und Text */
-    align-items: center; /* Vertikal zentrieren */
-    justify-content: center; /* Horizontal zentrieren */
+    display: flex; /* Flexbox for better alignment of logo and text */
+    align-items: center; /* Vertically center */
+    /* justify-content: center; /* Removed this to align left if needed */
 }
 
 /* The Google logo image */
 #google_translate_element .goog-te-gadget-simple img {
-    /* Filters to adjust the Google logo color for dark mode */
-    filter: invert(1) grayscale(100%) brightness(150%) !important; /* Invertiert Farben (macht weiß schwarz, dann hell), graut es ein und hellt es auf */
-    margin-right: 5px !important; /* Etwas Abstand zum Text */
-    height: 18px !important; /* Optisch anpassen */
+    filter: invert(1) grayscale(100%) brightness(150%) !important; /* Invert colors, grayscale, brighten for dark mode */
+    margin-right: 5px !important; /* Space to the text */
+    height: 18px !important; /* Visual adjustment */
     width: auto !important;
 }
 
-/* The "Sprache auswählen" text */
+/* The "Sprache auswählen" text and the current language text */
 #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span {
-    color: #eee !important; /* Helle Textfarbe */
+    color: #eee !important; /* Light text color */
     font-weight: 500 !important;
-    text-decoration: none !important; /* Unterstreichung entfernen, falls vorhanden */
+    text-decoration: none !important; /* Remove underline, if any */
 }
 
 /* Hover state for the "Sprache auswählen" text */
 #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span:hover {
-    color: #007bff !important; /* Beispiel: Blauer Hover-Effekt */
+    color: #007bff !important; /* Example: Blue hover effect */
 }
 
 /* The small arrow icon (down arrow) */
 #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span:last-child {
-    color: #eee !important; /* Farbe des Pfeils anpassen */
+    color: #eee !important; /* Adjust arrow color */
 }
 
-/* Styling for the dropdown list that appears when you click "Sprache auswählen" */
-/* This part is even trickier, as it's often generated dynamically and can be harder to override. */
-/* You might need to inspect it in the browser's developer tools when it's open. */
-/* This often needs !important to override Google's inline styles. */
-.goog-menuitem { /* General item in the dropdown list */
-    background-color: #333 !important; /* Dark background for dropdown items */
-    color: #eee !important; /* Light text for dropdown items */
+
+/* !!! IMPORTANT: STYLING THE POP-UP LANGUAGE SELECTION MENU !!! */
+/* This is often the trickiest part due to iframes/Shadow DOM. */
+/* Try these rules. You might need to inspect the opened dropdown in your browser's dev tools */
+/* to find exact classes or element structures to target. */
+
+/* The main container of the opened language selection menu */
+.goog-menu {
+    background-color: #333 !important; /* Dark background for the whole pop-up menu */
+    border: 1px solid #555 !important; /* Darker border */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; /* Darker shadow */
+    border-radius: 5px !important;
 }
 
-.goog-menuitem:hover { /* Hover state for dropdown items */
+/* Individual language items in the dropdown list */
+.goog-menuitem {
+    background-color: #333 !important; /* Dark background for individual items */
+    color: #eee !important; /* Light text color for language names */
+    padding: 8px 15px !important; /* Adjust padding as needed */
+}
+
+/* Hover state for individual language items */
+.goog-menuitem:hover {
     background-color: #555 !important; /* Slightly lighter dark background on hover */
     color: #fff !important; /* White text on hover */
 }
 
-/* Separator lines in the dropdown (if any) */
-.goog-menuseparator {
-    background-color: #555 !important;
-}
-
-/* The active selected language in the dropdown list */
+/* Selected/active language item in the list */
 .goog-menuitem-highlight {
-    background-color: #007bff !important; /* Example: Blue for selected item */
+    background-color: #007bff !important; /* Blue for the currently selected language */
     color: #fff !important;
 }
 
-/* The Google Translate banner frame itself (top of the page) */
+/* Any separator lines in the dropdown (if present) */
+.goog-menuseparator {
+    background-color: #555 !important; /* Darker separator */
+}
+
+/* The "Google Translate" text inside the opened menu (if it appears) */
+.goog-text-highlight {
+    background-color: transparent !important; /* Try to remove highlight background */
+    color: #fff !important; /* Lighter gray for this text */
+}
+
+/* The small arrow/bullet point next to the selected language */
+.goog-menuitem .goog-menuitem-icon {
+    /* If there's an icon, we might need to adjust its color or visibility */
+    /* background-color: #eee !important; */
+    /* filter: invert(1) grayscale(100%) brightness(150%) !important; */
+    /* You might even hide it if it's problematic */
+    /* display: none !important; */
+}
+
+
+/* Styling for the Google Translate banner frame itself (top of the page) */
+/* As discussed, this is extremely limited due to iframe/Shadow DOM. */
 .goog-te-banner-frame.skiptranslate {
-    /* Keep this for potential top banner positioning */
     top: 0px !important;
     left: 0px !important;
     width: 100% !important;
     z-index: 2147483647 !important;
-    /* You may attempt to change its background, but it's very difficult */
+    /* Attempt to darken the background of the banner frame, may not work */
     /* background-color: #1a1a1a !important; */
 }

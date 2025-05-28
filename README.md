@@ -1,6 +1,6 @@
-# emunator.com
+# Homepage: emunator.com
 
-Official repository for emunator.com!. 
+Official repository for [www.emunator.com](https://www.emunator.com)!. 
 This site is built with Jekyll and hosted on GitHub Pages.
 
 ## About This Blog
@@ -34,7 +34,7 @@ This blog is automatically deployed to GitHub Pages using GitHub Actions.
 
 The **Coderon** theme is a premium theme, and its usage is subject to the terms of the license under which it was purchased. Unauthorized redistribution or use of the theme's source code is not permitted. Please refer to the theme's original licensing documentation for specific details.
 
-All new blog content and custom code written by [TheEmunator](https://github.com/TheEmunator) (if any, beyond the theme) is protected under copyright.
+All new blog content and custom code written by [TheEmunator](https://github.com/the-emunator) (if any, beyond the theme) is protected under copyright.
 
 ## Support
 

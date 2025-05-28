@@ -129,3 +129,45 @@
 {% include_relative _4-layouts/page.scss %}
 /* >>>>>>>>>>>>>> :: 4.3-Tags Page <<<<<<<<<<<<<<< */
 {% include_relative _4-layouts/tags-page.scss %}
+
+
+
+/* Google Translate Widget Positioning */
+/* This section targets the dropdown menu, not the automatic banner. */
+#google_translate_element {
+    position: fixed; /* Fixes it within the browser window */
+    bottom: 20px;    /* 20px from the bottom edge */
+    left: 20px;      /* 20px from the left edge */
+    z-index: 9999;   /* Ensures it stays on top of other elements */
+    /* Optional: Adjust background color, padding, etc., for visibility */
+    background-color: #fff; /* Example: White background for contrast */
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* You might also need to style the elements contained within the Google Translate widget */
+/* to customize the appearance of the dropdown itself. */
+/* Example: The actual select field inside the widget */
+#google_translate_element .goog-te-combo {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    /* Further customizations here if desired */
+}
+
+/* Styling for the automatic Google Translate banner (if autoDisplay: true) */
+/* IMPORTANT: This is highly limited. The banner loads in an iframe and uses Shadow DOM, */
+/* so your CSS often cannot directly style its internal elements. */
+/* Attempts here are primarily for positioning the iframe container itself. */
+.goog-te-banner-frame.skiptranslate {
+    /* Example: Try to ensure it stays at the very top and doesn't collide with your header */
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    z-index: 2147483647 !important; /* Google's default z-index for the banner is very high */
+    /* You may try to adjust background or border, but these often won't apply */
+    /* background-color: #f0f0f0 !important; */
+    /* border-bottom: 1px solid #ccc !important; */
+}

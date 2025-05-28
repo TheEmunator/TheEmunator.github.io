@@ -2,7 +2,7 @@
 # Site Settings
 title: Emunator
 description: I'm Emu, the Emunator.
-logo: "/images/logo_lettering.png".
+logo: '/images/logo_lettering.png'
 logo_dark:
 
 

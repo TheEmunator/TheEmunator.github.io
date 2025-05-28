@@ -26,4 +26,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site # Der Ordner, den Jekyll beim Build erstellt
-          cname: theemunator.github.io # Optional: Setzt den CNAME (deine Domain). Wenn du später eine Custom Domain nutzt (emunator.de), musst du diesen Wert anpassen
+          cname: the-emunator.github.io # Optional: Setzt den CNAME (deine Domain). Wenn du später eine Custom Domain nutzt (emunator.de), musst du diesen Wert anpassen
